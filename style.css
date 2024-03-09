@@ -13,6 +13,8 @@ body{
 
 :root {
     --container-background-color: hsl(212, 45%, 89%);
+    --p-font-color: hsl(220, 15%, 55%);
+    --h1-font-color: hsl(218, 44%, 22%); 
 }
 
 .container {
@@ -29,23 +31,33 @@ main {
     max-width: 300px;
     height: 90%;
     max-height: 500px;
-    display: grid;
-    grid-template-rows: 2.1fr 0.8fr 0.5fr; 
-    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    padding: 20px;
-    border-radius: 30px;
+    padding: 1rem;
+    border-radius: 26px;
 }
 
-.h1, .p{
+.h1{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 20%;
+}
+
+.p {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    height: 20%;
 }
 
 .h1 h1{
     font-size: 24px;
+    color: var(--h1-font-color);
+    font-weight: 700;
 }
 
 .qr-code {
@@ -53,6 +65,7 @@ main {
     align-items: flex-start;
     justify-content: center;
     position: relative;
+    height: 60%;
 }
 
 .qr-code img{
@@ -63,7 +76,9 @@ main {
 
 .p p{
     font-size: 15px;
-    width: 90%;
+    width: 85%;
+    font-weight: 400;
+    color: var(--p-font-color);
 }
 
 
