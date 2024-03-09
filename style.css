@@ -30,7 +30,7 @@ main {
     width: 90%;
     max-width: 300px;
     height: 90%;
-    max-height: 500px;
+    max-height: 460px;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -43,15 +43,15 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 20%;
+    height: 15%;
 }
 
 .p {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
-    height: 20%;
+    height: 15%;
 }
 
 .h1 h1{
@@ -62,10 +62,9 @@ main {
 
 .qr-code {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
     position: relative;
-    height: 60%;
+    height: 68%;
 }
 
 .qr-code img{
