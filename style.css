@@ -1,89 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  grid-template-rows: 1fr auto;
+  background-color: var(--container-background-color);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
 }
 
 :root {
-    --container-background-color: hsl(212, 45%, 89%);
-    --p-font-color: hsl(220, 15%, 55%);
-    --h1-font-color: hsl(218, 44%, 22%); 
-}
-
-.container {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    width: 100vw;
-    grid-template-rows: 10fr auto;
-    background-color: var(--container-background-color);
+  --container-background-color: hsl(212, 45%, 89%);
+  --p-font-color: hsl(220, 15%, 55%);
+  --h1-font-color: hsl(218, 44%, 22%);
 }
 
 main {
-    width: 90%;
-    max-width: 290px;
-    height: 90%;
-    max-height: 470px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 26px;
+  width: 18.125rem;
+  max-width: 90%;
+  height: 29.375rem;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1.625rem;
 }
 
-.h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 15%;
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-.h1 h1{
-    font-size: 22px;
-    color: var(--h1-font-color);
-    font-weight: 700;
+.h1 h1 {
+  font-size: 1.375rem;
+  color: var(--h1-font-color);
+  font-weight: 700;
 }
 
-.qr-code {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    height: 65%;
+.qr-code img {
+  width: 100%;
+  border-radius: 0.875rem;
 }
 
-.qr-code img{
-    position: absolute;
-    width: 100%;
-    border-radius: 14px;
+.p p {
+  font-size: 0.9375rem;
+  width: 85%;
+  font-weight: 400;
+  color: var(--p-font-color);
 }
 
-.p p{
-    font-size: 15px;
-    width: 85%;
-    font-weight: 400;
-    color: var(--p-font-color);
+@media screen and (width < 375px) {
+  main {
+    width: 80vw;
+  }
 }
-
-
-@media screen and (max-width: 375px){
-    main {
-        width: 80vw;
-        height: 80vh;
-    }
-} 
