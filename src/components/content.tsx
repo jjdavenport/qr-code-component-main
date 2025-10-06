@@ -25,7 +25,7 @@ export const Footer = () => {
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="font-outfit h-screen flex flex-col bg-light-gray text-default">
+      <div className="font-outfit bg-light-gray text-default flex h-screen flex-col">
         {children}
       </div>
     </>
@@ -35,7 +35,7 @@ export const Wrapper = ({ children }: { children: React.ReactNode }) => {
 export const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="flex flex-col flex-1 items-center justify-center">
+      <div className="flex flex-1 flex-col items-center justify-center">
         {children}
       </div>
     </>
@@ -45,15 +45,21 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
 export const Main = () => {
   return (
     <>
-      <main className="bg-white flex gap-4 text-center p-4 rounded-2xl w-80 flex-col">
-        <img src={image} className="object-contain rounded-2xl" alt="qr code" />
-        <h1 className="text-xl text-dark-blue font-bold">
-          Improve your front-end skills by building projects
-        </h1>
-        <p className="text-grayish-blue">
-          Scan the QR code to visit Frontend Mentor and take your coding skills
-          to the next level
-        </p>
+      <main className="flex h-[31.1875rem] w-80 flex-col justify-between gap-6 rounded-[0.625rem] bg-white px-4 pt-4 pb-20 text-center">
+        <img
+          src={image}
+          className="h-[18rem] w-[18rem] rounded-[0.625rem] object-contain"
+          alt="qr code"
+        />
+        <div className="flex h-[8.1875rem] w-72 flex-col items-center gap-4">
+          <h1 className="text-dark-blue lead text-[1.375rem] leading-[120%] font-bold tracking-normal">
+            Improve your front-end skills by building projects
+          </h1>
+          <p className="text-grayish-blue h-[0.125rem] w-[16rem] leading-[140%] tracking-[0.2px]">
+            Scan the QR code to visit Frontend Mentor and take your coding
+            skills to the next level
+          </p>
+        </div>
       </main>
     </>
   );
