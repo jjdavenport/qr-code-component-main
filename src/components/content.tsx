@@ -1,66 +1,26 @@
 import image from "../assets/image-qr-code.png";
 
-export const Footer = () => {
+export const Desktop = () => {
   return (
-    <>
-      <footer className="text-center text-xs">
-        Challenge by{" "}
-        <a
-          className="underline"
-          href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank"
-        >
-          Frontend Mentor
-        </a>
-        . Coded by{" "}
-        <a className="underline" href="https://github.com/jjdavenport">
-          jjdavenport
-        </a>
-        .
-      </footer>
-    </>
-  );
-};
-
-export const Wrapper = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <>
-      <div className="font-outfit bg-light-gray text-default flex h-screen flex-col">
-        {children}
-      </div>
-    </>
-  );
-};
-
-export const Container = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <>
-      <div className="flex flex-1 flex-col items-center justify-center">
-        {children}
-      </div>
-    </>
-  );
-};
-
-export const Main = () => {
-  return (
-    <>
-      <main className="flex h-[31.1875rem] w-80 flex-col justify-between gap-6 rounded-[1.25rem] bg-white px-4 pt-4 pb-20 text-center shadow-[0_25px_25px_0_rgba(0,0,0,0.0477)]">
+    <main className="bg-variables-color-slate-300 relative flex h-screen flex-col items-center justify-center">
+      <article className="bg-variables-color-white shadow-card-shadow relative inline-flex flex-[0_0_auto] flex-col items-start gap-[var(--variables-spacing-300)] rounded-[20px] pt-[var(--variables-spacing-200)] pr-[var(--variables-spacing-200)] pb-[var(--variables-spacing-500)] pl-[var(--variables-spacing-200)]">
         <img
+          className="relative h-72 w-72 rounded-[10px]"
+          alt="QR code to visit Frontend Mentor"
           src={image}
-          className="h-[18rem] w-[18rem] rounded-[0.625rem] object-contain"
-          alt="qr code"
         />
-        <div className="flex h-[8.1875rem] w-72 flex-col items-center gap-4">
-          <h1 className="text-dark-blue lead text-[1.375rem] leading-[120%] font-bold tracking-normal">
+
+        <div className="relative flex h-[131px] w-72 flex-col items-center gap-[var(--variables-spacing-200)] py-0 pr-[var(--variables-spacing-200)] pl-[var(--variables-spacing-200)]">
+          <h1 className="font-text-preset-1 text-variables-color-slate-900 relative mt-[-1.00px] self-stretch text-center text-[length:var(--text-preset-1-font-size)] leading-[var(--text-preset-1-line-height)] font-[number:var(--text-preset-1-font-weight)] tracking-[var(--text-preset-1-letter-spacing)] [font-style:var(--text-preset-1-font-style)]">
             Improve your front-end skills by building projects
           </h1>
-          <p className="text-grayish-blue h-[0.125rem] w-[16rem] leading-[140%] tracking-[0.2px]">
+
+          <p className="font-text-preset-2 text-variables-color-slate-500 relative self-stretch text-center text-[length:var(--text-preset-2-font-size)] leading-[var(--text-preset-2-line-height)] font-[number:var(--text-preset-2-font-weight)] tracking-[var(--text-preset-2-letter-spacing)] [font-style:var(--text-preset-2-font-style)]">
             Scan the QR code to visit Frontend Mentor and take your coding
             skills to the next level
           </p>
         </div>
-      </main>
-    </>
+      </article>
+    </main>
   );
 };

@@ -3,9 +3,169 @@
 @import "tailwindcss";
 
 @theme {
-  --color-light-gray: hsl(212, 45%, 89%);
-  --color-grayish-blue: hsl(220, 15%, 55%);
-  --color-dark-blue: hsl(218, 44%, 22%);
-  --text-default: 0.9375rem;
-  --font-outfit: "outfit", "sans-serif";
+  --color-variables-color-blue-500: var(--variables-color-blue-500);
+  --color-variables-color-blue-600: var(--variables-color-blue-600);
+  --color-variables-color-slate-300: var(--variables-color-slate-300);
+  --color-variables-color-slate-500: var(--variables-color-slate-500);
+  --color-variables-color-slate-900: var(--variables-color-slate-900);
+  --color-variables-color-white: var(--variables-color-white);
+
+  --font-text-preset-1: var(--text-preset-1-font-family);
+  --font-text-preset-2: var(--text-preset-2-font-family);
+
+  --shadow-card-shadow: var(--card-shadow);
+}
+
+/* === Base Layer === */
+@layer base {
+  button,
+  input,
+  select,
+  textarea {
+    @apply appearance-none border-0 bg-transparent outline-none;
+  }
+}
+
+/* === Components Layer === */
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+/* === Root Variables === */
+:root {
+  --card-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.05);
+
+  --text-preset-1-font-family: "Outfit", Helvetica;
+  --text-preset-1-font-size: 22px;
+  --text-preset-1-font-style: normal;
+  --text-preset-1-font-weight: 700;
+  --text-preset-1-letter-spacing: 0px;
+  --text-preset-1-line-height: 120%;
+
+  --text-preset-2-font-family: "Outfit", Helvetica;
+  --text-preset-2-font-size: 15px;
+  --text-preset-2-font-style: normal;
+  --text-preset-2-font-weight: 400;
+  --text-preset-2-letter-spacing: 0.2px;
+  --text-preset-2-line-height: 140%;
+
+  --variables-color-blue-500: rgba(54, 133, 255, 1);
+  --variables-color-blue-600: rgba(44, 125, 250, 1);
+  --variables-color-slate-300: rgba(213, 225, 239, 1);
+  --variables-color-slate-500: rgba(104, 119, 141, 1);
+  --variables-color-slate-900: rgba(31, 49, 79, 1);
+  --variables-color-white: rgba(255, 255, 255, 1);
+
+  --variables-font-size-text-preset-1: 22px;
+  --variables-font-size-text-preset-2: 15px;
+  --variables-spacing-200: 16px;
+  --variables-spacing-300: 24px;
+  --variables-spacing-500: 40px;
+
+  --animate-spin: spin 1s linear infinite;
+}
+
+/* === Custom Animations === */
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+/* === Keyframes === */
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
 }
