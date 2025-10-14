@@ -48,12 +48,16 @@ export const Main = () => {
   return (
     <>
       <main className="flex h-[31.1875rem] w-80 flex-col justify-between gap-6 rounded-[1.25rem] bg-white px-4 pt-4 pb-20 text-center shadow-[0_25px_25px_0_rgba(0,0,0,0.0477)]">
-        <img
-          onLoad={() => setLoaded(true)}
-          src={image}
-          className={`h-[18rem] w-[18rem] rounded-[0.625rem] object-contain transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
-          alt="qr code"
-        />
+        <div
+          className={`${loaded ? "animate-none" : "animate-pulse"} bg-qr-code min-h-[18rem] w-[18rem] overflow-hidden rounded-[0.625rem]`}
+        >
+          <img
+            onLoad={() => setLoaded(true)}
+            src={image}
+            className={`object-contain transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+            alt="qr code"
+          />
+        </div>
         <div className="flex h-[8.1875rem] w-72 flex-col items-center gap-4">
           <h1 className="text-dark-blue lead text-[1.375rem] leading-[120%] font-bold tracking-normal">
             Improve your front-end skills by building projects
